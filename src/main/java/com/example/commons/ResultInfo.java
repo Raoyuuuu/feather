@@ -120,12 +120,12 @@ public class ResultInfo extends HashMap<String,Object> {
     }
 
     public <T> T getData() {
-        return this.isSuccess() ? this.get("data") : null;
+        return this.isSuccess() ? (T) this.get("data") : null;
     }
 
     public <T> T getSuccessData() throws Exception {
         this.successOrThrowException();
-        return this.get("data");
+        return (T) this.get("data");
     }
 
     public Map getSuccessMap() throws Exception {
